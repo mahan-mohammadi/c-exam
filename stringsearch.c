@@ -10,22 +10,17 @@ int main() {
     printf("Enter the word you want to search: ");
     gets(word);
 
+
     int i = 0, j, k;
     while (str[i] != '\0') {
+
         if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
             letterCount++;
         }
+
         if ((str[i] != ' ' && str[i] != '\t') &&
             (i == 0 || str[i - 1] == ' ' || str[i - 1] == '\t')) {
-            int temp = i;
-
-            while (str[temp] != ' ' && str[temp] != '\t' && str[temp] != '\0') {
-                if ((str[temp] >= 'a' && str[temp] <= 'z') || (str[temp] >= 'A' && str[temp] <= 'Z')) {
-                    wordCount++;
-                    break;
-                }
-                temp++;
-            }
+            wordCount++;
         }
 
         i++;
